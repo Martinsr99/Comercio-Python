@@ -1,3 +1,0 @@
-Bienvenido {{ usuario.nombre }} {{ usuario.apellido }}!
-
-Gracias por registrarse en Comercio Curso App!
