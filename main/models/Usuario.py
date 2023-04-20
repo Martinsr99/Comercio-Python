@@ -13,3 +13,36 @@ class Usuario(db.Model):
 
     def __repr__(self):
         return f'{self.nombre}'
+    
+    def to_json(self):
+        usuario_json = {
+            'id': self.id,
+            'nombre': self.nombre,
+            'apellido': self.apellido,
+            'email': self.email,
+            'telefono': self.telefono,
+            'role': self.role,
+            'fecha': str(self.fecha_registro)
+        }
+        return usuario_json
+    
+    @staticmethod
+    def from_json(usuario_json):
+        id = usuario_json["id"]
+        nombre = usuario_json["nombre"]
+        apellido = usuario_json["apellido"]
+        email = usuario_json["email"]
+        telefono = usuario_json["telefono"]
+        role = usuario_json["role"]
+        fecha_registro = usuario_json["fecha_registro"]
+
+        return Usuario(
+            id=id,
+            nombre=nombre,
+            apellido=apellido,
+            email=email,
+            telefono=telefono,
+            role=role,
+            fecha_registro=fecha_registro
+        )
+        
