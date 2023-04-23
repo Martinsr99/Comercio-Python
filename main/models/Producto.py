@@ -27,12 +27,12 @@ class Producto(db.Model):
     
     @staticmethod
     def from_json(producto_json):
-        id = producto_json['id']
-        nombre = producto_json['nombre']
-        precio = producto_json['precio']
-        imagen = producto_json['imagen']
-        descripcion = producto_json['descripcion']
-        stock = producto_json['stock']
+        id = producto_json.get('id')
+        nombre = producto_json.get('nombre')
+        precio = producto_json.get('precio')
+        imagen = producto_json.get('imagen')
+        descripcion = producto_json.get('descripcion')
+        stock = producto_json.get('stock')
         return Producto(
             id = id,
             nombre = nombre,
