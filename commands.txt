@@ -1,0 +1,4 @@
+cd .\backend\
+python -m venv .
+cd .\Scripts\
+.\activate
